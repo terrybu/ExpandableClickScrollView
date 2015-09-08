@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="ExpandableClickScrollView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UVo-rA-1l4">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7L-Tj-oJ9" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
+                                        <subviews>
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BlO-83-GMd">
+                                                <rect key="frame" x="0.0" y="52" width="600" height="400"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="Zm0-GY-93r"/>
+                                                </constraints>
+                                                <color key="separatorColor" red="0.62352941179999999" green="0.36078431370000003" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <prototypes>
+                                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="eUd-hc-RlB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eUd-hc-RlB" id="LjC-GO-zvY">
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </tableViewCellContentView>
+                                                        <color key="backgroundColor" red="0.20000000000000001" green="0.48627450979999998" blue="0.71764705880000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </tableViewCell>
+                                                </prototypes>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0zS-a7-ZN5"/>
+                                                    <outlet property="delegate" destination="BYZ-38-t0r" id="faj-3S-Eqb"/>
+                                                </connections>
+                                            </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-7P-S8N" customClass="ExpandableAboutBar" customModule="ExpandableClickScrollView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="4iB-tX-bJA"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="BlO-83-GMd" secondAttribute="trailing" id="5yA-JJ-Ylr"/>
+                                            <constraint firstItem="BlO-83-GMd" firstAttribute="leading" secondItem="i7L-Tj-oJ9" secondAttribute="leading" id="DLg-Xv-brq"/>
+                                            <constraint firstAttribute="height" constant="1000" id="EMW-QK-pPY"/>
+                                            <constraint firstAttribute="trailing" secondItem="BlO-83-GMd" secondAttribute="trailing" id="Ekh-a0-fSV"/>
+                                            <constraint firstItem="Idj-7P-S8N" firstAttribute="top" secondItem="i7L-Tj-oJ9" secondAttribute="top" id="ISE-AA-01T"/>
+                                            <constraint firstAttribute="trailing" secondItem="Idj-7P-S8N" secondAttribute="trailing" id="SHg-kH-9Uz"/>
+                                            <constraint firstItem="BlO-83-GMd" firstAttribute="top" secondItem="Idj-7P-S8N" secondAttribute="bottom" constant="20" id="TOo-A9-B3d"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="BlO-83-GMd" secondAttribute="bottom" constant="384" id="Zb4-bn-WQX"/>
+                                            <constraint firstItem="BlO-83-GMd" firstAttribute="leading" secondItem="i7L-Tj-oJ9" secondAttribute="leadingMargin" id="ZfG-e5-SQD"/>
+                                            <constraint firstItem="Idj-7P-S8N" firstAttribute="leading" secondItem="i7L-Tj-oJ9" secondAttribute="leading" id="daK-5a-Dd5"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="5yA-JJ-Ylr"/>
+                                                <exclude reference="Zb4-bn-WQX"/>
+                                                <exclude reference="ZfG-e5-SQD"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="i7L-Tj-oJ9" firstAttribute="top" secondItem="UVo-rA-1l4" secondAttribute="topMargin" id="6KA-nw-YYQ"/>
+                                    <constraint firstAttribute="centerX" secondItem="i7L-Tj-oJ9" secondAttribute="centerX" id="TYm-pS-Tcc"/>
+                                    <constraint firstItem="i7L-Tj-oJ9" firstAttribute="leading" secondItem="UVo-rA-1l4" secondAttribute="leadingMargin" id="WC4-z8-clg"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="i7L-Tj-oJ9" secondAttribute="bottom" id="a16-Ih-XNk"/>
+                                    <constraint firstItem="i7L-Tj-oJ9" firstAttribute="top" secondItem="UVo-rA-1l4" secondAttribute="top" id="eA4-vw-ZSc"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="i7L-Tj-oJ9" secondAttribute="trailing" id="rfs-L7-qJZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="i7L-Tj-oJ9" secondAttribute="trailing" id="v6H-JY-AUe"/>
+                                    <constraint firstAttribute="bottom" secondItem="i7L-Tj-oJ9" secondAttribute="bottom" id="vZK-tF-nob"/>
+                                    <constraint firstItem="i7L-Tj-oJ9" firstAttribute="leading" secondItem="UVo-rA-1l4" secondAttribute="leading" id="xP5-X3-g2V"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6KA-nw-YYQ"/>
+                                        <exclude reference="WC4-z8-clg"/>
+                                        <exclude reference="a16-Ih-XNk"/>
+                                        <exclude reference="rfs-L7-qJZ"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UVo-rA-1l4" secondAttribute="bottom" id="29b-qh-THK"/>
+                            <constraint firstItem="UVo-rA-1l4" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6fF-P0-YbT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UVo-rA-1l4" secondAttribute="bottom" id="7j4-r0-cZD"/>
+                            <constraint firstItem="UVo-rA-1l4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="P76-MO-yEc"/>
+                            <constraint firstItem="UVo-rA-1l4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="bXx-x1-kHb"/>
+                            <constraint firstAttribute="trailing" secondItem="UVo-rA-1l4" secondAttribute="trailing" id="g4G-Rr-rVX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UVo-rA-1l4" secondAttribute="bottom" id="zng-Rg-qd2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6fF-P0-YbT"/>
+                                <exclude reference="29b-qh-THK"/>
+                                <exclude reference="7j4-r0-cZD"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="ExpandableClickScrollView" destination="UVo-rA-1l4" id="kI2-iA-h6v"/>
+                        <outlet property="contentView" destination="i7L-Tj-oJ9" id="hQa-Ax-gsf"/>
+                        <outlet property="expandableAboutBar" destination="Idj-7P-S8N" id="Vtx-wg-hVA"/>
+                        <outlet property="expandableClickScrollView" destination="UVo-rA-1l4" id="cnt-57-C1L"/>
+                        <outlet property="tableview" destination="BlO-83-GMd" id="kmj-Vn-IdL"/>
+                        <outlet property="verticalSpaceConstraint" destination="TOo-A9-B3d" id="s3X-sd-Mhz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
