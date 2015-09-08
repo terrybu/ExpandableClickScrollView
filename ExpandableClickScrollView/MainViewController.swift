@@ -17,23 +17,29 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     var hiddenExpandingView: UIView!
     @IBOutlet var tableview: UITableView!
     
-    @IBOutlet weak var verticalSpaceConstraint: NSLayoutConstraint!
+    //MARK: Constraints
+    @IBOutlet weak var constraintBarToTableviewVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        placeLineMarkers()
+        // Do any additional setup after loading the view, typically from a nib.
+        expandableAboutBar.delegate = self
+    }
+    
+    private func placeLineMarkers() {
         for var i = 0.0; i <= Double(contentView.frame.size.height); i = i + 100 {
             let label = UILabel(frame: CGRect(x: Double(8), y: i, width: 100, height: 25))
             label.text = String(format:"%f", i)
-            label.textColor = UIColor.grayColor()
             let line = UIView(frame: CGRect(x: Double(0), y: i, width: Double(self.view.frame.size.width), height: 1))
-            line.backgroundColor = UIColor.grayColor()
+            line.backgroundColor = UIColor.blackColor()
+            label.alpha = 0.2
+            line.alpha = 0.2
             
             contentView.addSubview(label)
             contentView.addSubview(line)
-            
         }
-        // Do any additional setup after loading the view, typically from a nib.
-        expandableAboutBar.delegate = self
     }
     
     //MARK: ExpandableAboutBar methods
@@ -60,17 +66,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 newFrame.size.height += 200
                 self.hiddenExpandingView.frame = newFrame
 
-                self.expandableAboutBar.expanded = true
-                //tableview needs to move down as much as 200 pixels
-//                var newTableviewFrame = self.tableview.frame
-//                newTableviewFrame.origin.y += 200
-//                self.tableview.frame = newTableviewFrame
+                self.constraintBarToTableviewVerticalConstraint.constant += 200
+                self.constraintContentViewHeight.constant += 200
                 
-                self.verticalSpaceConstraint.constant += 200
                 self.view.layoutIfNeeded()
 
                 }) { (Bool completed) -> Void in
-
+                    self.expandableAboutBar.expanded = true
             }
         }
         else {
@@ -87,7 +89,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.hiddenExpandingView.frame = newFrame
                 
                 //tableview needs to move up now 200 pixels
-                self.verticalSpaceConstraint.constant -= 200
+                self.constraintBarToTableviewVerticalConstraint.constant -= 200
+                self.constraintContentViewHeight.constant -= 200
                 self.view.layoutIfNeeded()
                 
                 }) { (Bool completed) -> Void in

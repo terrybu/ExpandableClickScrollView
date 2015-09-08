@@ -23,6 +23,13 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7L-Tj-oJ9" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-7P-S8N" customClass="ExpandableAboutBar" customModule="ExpandableClickScrollView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="4iB-tX-bJA"/>
+                                                </constraints>
+                                            </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BlO-83-GMd">
                                                 <rect key="frame" x="0.0" y="52" width="600" height="400"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,26 +52,27 @@
                                                     <outlet property="delegate" destination="BYZ-38-t0r" id="faj-3S-Eqb"/>
                                                 </connections>
                                             </tableView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-7P-S8N" customClass="ExpandableAboutBar" customModule="ExpandableClickScrollView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="4iB-tX-bJA"/>
-                                                </constraints>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-ws-qpn">
+                                                <rect key="frame" x="0.0" y="472" width="600" height="528"/>
+                                                <color key="backgroundColor" red="1" green="0.2274509804" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailingMargin" secondItem="BlO-83-GMd" secondAttribute="trailing" id="5yA-JJ-Ylr"/>
+                                            <constraint firstAttribute="bottom" secondItem="dD8-ws-qpn" secondAttribute="bottom" id="9do-A8-VaR"/>
                                             <constraint firstItem="BlO-83-GMd" firstAttribute="leading" secondItem="i7L-Tj-oJ9" secondAttribute="leading" id="DLg-Xv-brq"/>
                                             <constraint firstAttribute="height" constant="1000" id="EMW-QK-pPY"/>
                                             <constraint firstAttribute="trailing" secondItem="BlO-83-GMd" secondAttribute="trailing" id="Ekh-a0-fSV"/>
                                             <constraint firstItem="Idj-7P-S8N" firstAttribute="top" secondItem="i7L-Tj-oJ9" secondAttribute="top" id="ISE-AA-01T"/>
+                                            <constraint firstItem="dD8-ws-qpn" firstAttribute="top" secondItem="BlO-83-GMd" secondAttribute="bottom" constant="20" id="M6d-uL-hvb"/>
                                             <constraint firstAttribute="trailing" secondItem="Idj-7P-S8N" secondAttribute="trailing" id="SHg-kH-9Uz"/>
                                             <constraint firstItem="BlO-83-GMd" firstAttribute="top" secondItem="Idj-7P-S8N" secondAttribute="bottom" constant="20" id="TOo-A9-B3d"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="BlO-83-GMd" secondAttribute="bottom" constant="384" id="Zb4-bn-WQX"/>
                                             <constraint firstItem="BlO-83-GMd" firstAttribute="leading" secondItem="i7L-Tj-oJ9" secondAttribute="leadingMargin" id="ZfG-e5-SQD"/>
+                                            <constraint firstAttribute="trailing" secondItem="dD8-ws-qpn" secondAttribute="trailing" id="aR7-Sf-5bR"/>
                                             <constraint firstItem="Idj-7P-S8N" firstAttribute="leading" secondItem="i7L-Tj-oJ9" secondAttribute="leading" id="daK-5a-Dd5"/>
+                                            <constraint firstItem="dD8-ws-qpn" firstAttribute="leading" secondItem="i7L-Tj-oJ9" secondAttribute="leading" id="eKZ-3c-7fq"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -116,11 +124,12 @@
                     </view>
                     <connections>
                         <outlet property="ExpandableClickScrollView" destination="UVo-rA-1l4" id="kI2-iA-h6v"/>
+                        <outlet property="constraintBarToTableviewVerticalConstraint" destination="TOo-A9-B3d" id="AYH-4P-Ddz"/>
+                        <outlet property="constraintContentViewHeight" destination="EMW-QK-pPY" id="Ah6-W6-0Tx"/>
                         <outlet property="contentView" destination="i7L-Tj-oJ9" id="hQa-Ax-gsf"/>
                         <outlet property="expandableAboutBar" destination="Idj-7P-S8N" id="Vtx-wg-hVA"/>
                         <outlet property="expandableClickScrollView" destination="UVo-rA-1l4" id="cnt-57-C1L"/>
                         <outlet property="tableview" destination="BlO-83-GMd" id="kmj-Vn-IdL"/>
-                        <outlet property="verticalSpaceConstraint" destination="TOo-A9-B3d" id="s3X-sd-Mhz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
