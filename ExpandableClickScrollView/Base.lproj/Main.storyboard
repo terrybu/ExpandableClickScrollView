@@ -130,6 +130,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="constraintContentViewHeight" destination="EMW-QK-pPY" id="elC-yj-sCT"/>
                         <outlet property="constraintHeightExpandableView" destination="4iB-tX-bJA" id="abc-aC-i0e"/>
                         <outlet property="contentView" destination="i7L-Tj-oJ9" id="hQa-Ax-gsf"/>
                         <outlet property="expandableAboutView" destination="Idj-7P-S8N" id="esX-H9-uzI"/>

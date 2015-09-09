@@ -8,6 +8,11 @@
 
 import UIKit
 
+private let kOriginalAboutViewHeight: CGFloat = 32.0
+private let kExpandedAboutViewHeight: CGFloat = 300.0
+private let kContentViewHeightAdjustment: CGFloat = kExpandedAboutViewHeight - kOriginalAboutViewHeight
+private let kOriginalContentViewHeight: CGFloat = 1000
+
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ExpandableAboutViewDelegate {
     
     @IBOutlet weak var expandableClickScrollView: UIScrollView!
@@ -17,12 +22,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //MARK: Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
+    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         placeLineMarkers()
         expandableAboutView.delegate = self
-        constraintHeightExpandableView.constant = 32
+        constraintHeightExpandableView.constant = kOriginalAboutViewHeight
         self.view.layoutIfNeeded() //crucial after changng autolayout constraint
     }
     
@@ -47,7 +53,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            println("bar y \(expandableAboutView.frame.origin.y)")
 //            println("tableview y \(tableview.frame.origin.y)")
             UIView.animateWithDuration(0.25, animations: { () -> Void in
-                self.constraintHeightExpandableView.constant = 300
+                self.constraintHeightExpandableView.constant = kExpandedAboutViewHeight
+                self.constraintContentViewHeight.constant += kContentViewHeightAdjustment
                 self.view.layoutIfNeeded() //crucial after changng autolayout constraint
                 
                 }) { (Bool completed) -> Void in
@@ -58,7 +65,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             println("did press expand button when it WAS expanded")
             UIView.animateWithDuration(0.25, animations: { () -> Void in
                 
-                self.constraintHeightExpandableView.constant = 32
+                self.constraintHeightExpandableView.constant = kOriginalAboutViewHeight
+                self.constraintContentViewHeight.constant =  kOriginalContentViewHeight
                 self.view.layoutIfNeeded() //crucial after changng autolayout constraint
                 
                 }) { (Bool completed) -> Void in
@@ -76,7 +84,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 10
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
