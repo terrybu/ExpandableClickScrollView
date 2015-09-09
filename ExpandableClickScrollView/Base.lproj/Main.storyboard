@@ -29,6 +29,13 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="4iB-tX-bJA"/>
                                                 </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="aboutLabelTitle" value="About Something"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="titleLabeltitle" value="This is my title"/>
+                                                    <userDefinedRuntimeAttribute type="string" keyPath="textViewContentText">
+                                                        <string key="value">asldfjasfpasfpsfjpasfsdpfjsdpiafjasidpfjdsaipfjsaidpfjsiadpfjidsapfjipsadfjipsadfijpasdfpijdsafijsadifpsdapifjsadipfjsdaipfjsadipfjdwpiqjfpqifjipweqfjqwefpwqeidninfownfpqwfnwepifpqwiefjweipfqipwf</string>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BlO-83-GMd">
                                                 <rect key="frame" x="0.0" y="320" width="600" height="400"/>
@@ -123,9 +130,6 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="ExpandableClickScrollView" destination="UVo-rA-1l4" id="kI2-iA-h6v"/>
-                        <outlet property="constraintBarToTableviewVerticalConstraint" destination="TOo-A9-B3d" id="AYH-4P-Ddz"/>
-                        <outlet property="constraintContentViewHeight" destination="EMW-QK-pPY" id="Ah6-W6-0Tx"/>
                         <outlet property="constraintHeightExpandableView" destination="4iB-tX-bJA" id="abc-aC-i0e"/>
                         <outlet property="contentView" destination="i7L-Tj-oJ9" id="hQa-Ax-gsf"/>
                         <outlet property="expandableAboutView" destination="Idj-7P-S8N" id="esX-H9-uzI"/>

@@ -15,7 +15,6 @@
 		D99EF2751B9F655000026D66 /* ExpandableClickScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF2741B9F655000026D66 /* ExpandableClickScrollViewTests.swift */; };
 		D99EF2811B9F660A00026D66 /* ExpandableAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF27E1B9F660A00026D66 /* ExpandableAboutView.swift */; };
 		D99EF2821B9F660A00026D66 /* ExpandableAboutView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D99EF27F1B9F660A00026D66 /* ExpandableAboutView.xib */; };
-		D99EF2831B9F660A00026D66 /* ExpandingAboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99EF2801B9F660A00026D66 /* ExpandingAboutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +40,6 @@
 		D99EF2741B9F655000026D66 /* ExpandableClickScrollViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableClickScrollViewTests.swift; sourceTree = "<group>"; };
 		D99EF27E1B9F660A00026D66 /* ExpandableAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandableAboutView.swift; sourceTree = "<group>"; };
 		D99EF27F1B9F660A00026D66 /* ExpandableAboutView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpandableAboutView.xib; sourceTree = "<group>"; };
-		D99EF2801B9F660A00026D66 /* ExpandingAboutView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingAboutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +86,6 @@
 				D99EF2601B9F654F00026D66 /* MainViewController.swift */,
 				D99EF27E1B9F660A00026D66 /* ExpandableAboutView.swift */,
 				D99EF27F1B9F660A00026D66 /* ExpandableAboutView.xib */,
-				D99EF2801B9F660A00026D66 /* ExpandingAboutView.swift */,
 				D99EF2651B9F654F00026D66 /* Images.xcassets */,
 				D99EF2671B9F654F00026D66 /* LaunchScreen.xib */,
 				D99EF25C1B9F654F00026D66 /* Supporting Files */,
@@ -225,7 +222,6 @@
 				D99EF2611B9F654F00026D66 /* MainViewController.swift in Sources */,
 				D99EF25F1B9F654F00026D66 /* AppDelegate.swift in Sources */,
 				D99EF2811B9F660A00026D66 /* ExpandableAboutView.swift in Sources */,
-				D99EF2831B9F660A00026D66 /* ExpandingAboutView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

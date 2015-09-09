@@ -12,17 +12,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var expandableClickScrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
-
     @IBOutlet var expandableAboutView: ExpandableAboutView!
-    var hiddenExpandingView: UIView!
     @IBOutlet var tableview: UITableView!
     
     //MARK: Constraints
     @IBOutlet weak var constraintHeightExpandableView: NSLayoutConstraint!
-
-    
-    @IBOutlet weak var constraintBarToTableviewVerticalConstraint: NSLayoutConstraint!
-    @IBOutlet weak var constraintContentViewHeight: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,9 +32,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             label.text = String(format:"%f", i)
             let line = UIView(frame: CGRect(x: Double(0), y: i, width: Double(self.view.frame.size.width), height: 1))
             line.backgroundColor = UIColor.blackColor()
-            label.alpha = 0.2
-            line.alpha = 0.2
-            
+            label.alpha = 0.1
+            line.alpha = 0.1
             contentView.addSubview(label)
             contentView.addSubview(line)
         }
@@ -49,18 +42,11 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //MARK: ExpandableAboutBar methods
     func didPressExpandButton() {
         if !expandableAboutView.expanded {
-            println("did press expand button when it wasn't expanded")
-            println("bar height \(expandableAboutView.frame.size.height)")
-            println("bar y \(expandableAboutView.frame.origin.y)")
-            println("tableview y \(tableview.frame.origin.y)")
-
-            hiddenExpandingView = ExpandingAboutView(frame: CGRectMake(0, 48, self.view.frame.width, 0), titleString: "test", introductionText: "test")
-            hiddenExpandingView.clipsToBounds = true
-            hiddenExpandingView.backgroundColor = UIColor.redColor()
-            
-            self.contentView.addSubview(hiddenExpandingView)
+//            println("did press expand button when it wasn't expanded")
+//            println("bar height \(expandableAboutView.frame.size.height)")
+//            println("bar y \(expandableAboutView.frame.origin.y)")
+//            println("tableview y \(tableview.frame.origin.y)")
             UIView.animateWithDuration(0.25, animations: { () -> Void in
-                
                 self.constraintHeightExpandableView.constant = 300
                 self.view.layoutIfNeeded() //crucial after changng autolayout constraint
                 

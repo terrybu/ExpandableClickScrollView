@@ -30,12 +30,28 @@ protocol ExpandableAboutViewDelegate {
     }
     
     //IBInspectable lets you read and write properties right in the inspector view of interface builder. Without it, there's no way for you to change properties of your custom view UI from storyboard
-    @IBInspectable var title: String? {
+    @IBInspectable var aboutLabelTitle: String? {
         get {
             return aboutLabel.text
         }
-        set(title) {
-            aboutLabel.text = title
+        set(aboutLabelTitle) {
+            aboutLabel.text = aboutLabelTitle
+        }
+    }
+    @IBInspectable var titleLabeltitle: String? {
+        get {
+            return titleLabel.text
+        }
+        set(titleLabeltitle) {
+            titleLabel.text = titleLabeltitle
+        }
+    }
+    @IBInspectable var textViewContentText: String? {
+        get {
+            return textView.text
+        }
+        set(textViewContentText) {
+            textView.text = textViewContentText
         }
     }
     
@@ -63,13 +79,5 @@ protocol ExpandableAboutViewDelegate {
         let nib = UINib(nibName: "ExpandableAboutView", bundle: bundle)
         return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
     }
-
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
 
 }
