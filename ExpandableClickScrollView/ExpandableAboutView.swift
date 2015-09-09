@@ -1,5 +1,5 @@
 //
-//  ExpandableAboutBar.swift
+//  ExpandableAboutView.swift
 //  In2-PI-Swift
 //
 //  Created by Terry Bu on 9/5/15.
@@ -8,20 +8,23 @@
 
 import UIKit
 
-protocol ExpandableAboutBarDelegate {
+protocol ExpandableAboutViewDelegate {
     func didPressExpandButton()
 }
 
 //IBDesignable lets you use Interface Builder and Storyboard to see the changes you are making to your custom view right inside Storyboard after you make the change
 //Without it, whatever changes you make in the XIB file of your custom view won't be seen in storyboard. Rather, storyboard will always just show the initial version of what your xib used to look like. IBDesignable lets you work around that. 
 
-@IBDesignable class ExpandableAboutBar: UIView {
+@IBDesignable class ExpandableAboutView: UIView {
     
     var view: UIView!
-    var delegate: ExpandableAboutBarDelegate?
+    var delegate: ExpandableAboutViewDelegate?
     var expanded: Bool
     
     @IBOutlet weak var aboutLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
     @IBAction func expandButtonPressed(sender: UIButton) {
         delegate?.didPressExpandButton()
     }
@@ -57,7 +60,7 @@ protocol ExpandableAboutBarDelegate {
     
     func loadViewFromNib() -> UIView {
         let bundle = NSBundle(forClass: self.dynamicType)
-        let nib = UINib(nibName: "ExpandableAboutBar", bundle: bundle)
+        let nib = UINib(nibName: "ExpandableAboutView", bundle: bundle)
         return nib.instantiateWithOwner(self, options: nil)[0] as! UIView
     }
 

@@ -23,15 +23,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i7L-Tj-oJ9" userLabel="Content View">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-7P-S8N" customClass="ExpandableAboutBar" customModule="ExpandableClickScrollView" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="32"/>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Idj-7P-S8N" customClass="ExpandableAboutView" customModule="ExpandableClickScrollView" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="32" id="4iB-tX-bJA"/>
+                                                    <constraint firstAttribute="height" constant="300" id="4iB-tX-bJA"/>
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="BlO-83-GMd">
-                                                <rect key="frame" x="0.0" y="52" width="600" height="400"/>
+                                                <rect key="frame" x="0.0" y="320" width="600" height="400"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="400" id="Zm0-GY-93r"/>
@@ -53,7 +53,7 @@
                                                 </connections>
                                             </tableView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dD8-ws-qpn">
-                                                <rect key="frame" x="0.0" y="472" width="600" height="528"/>
+                                                <rect key="frame" x="0.0" y="740" width="600" height="260"/>
                                                 <color key="backgroundColor" red="1" green="0.2274509804" blue="0.1176470588" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                         </subviews>
@@ -126,8 +126,9 @@
                         <outlet property="ExpandableClickScrollView" destination="UVo-rA-1l4" id="kI2-iA-h6v"/>
                         <outlet property="constraintBarToTableviewVerticalConstraint" destination="TOo-A9-B3d" id="AYH-4P-Ddz"/>
                         <outlet property="constraintContentViewHeight" destination="EMW-QK-pPY" id="Ah6-W6-0Tx"/>
+                        <outlet property="constraintHeightExpandableView" destination="4iB-tX-bJA" id="abc-aC-i0e"/>
                         <outlet property="contentView" destination="i7L-Tj-oJ9" id="hQa-Ax-gsf"/>
-                        <outlet property="expandableAboutBar" destination="Idj-7P-S8N" id="Vtx-wg-hVA"/>
+                        <outlet property="expandableAboutView" destination="Idj-7P-S8N" id="esX-H9-uzI"/>
                         <outlet property="expandableClickScrollView" destination="UVo-rA-1l4" id="cnt-57-C1L"/>
                         <outlet property="tableview" destination="BlO-83-GMd" id="kmj-Vn-IdL"/>
                     </connections>
